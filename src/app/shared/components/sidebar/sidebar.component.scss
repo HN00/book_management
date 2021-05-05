@@ -1,0 +1,76 @@
+@import '../../../../assets/styles/common.scss';
+
+.sidenav-container {
+  height: 100%;
+
+  .menu {
+    color: white;
+  }
+  
+  .sidenav {
+    width: 280px;
+    font-size: 30px;
+
+    z-index: 1000;
+    left: 250px;
+    margin-left: -250px;
+    overflow-y: auto;
+    background: #747474;
+
+    .mat-toolbar {
+      background-color: #747474;
+      font-size: 20px;
+      line-height: 64px;
+      text-align: center;      
+      color: #fff;
+      display: block;
+      text-decoration: none;
+
+      img {
+        width: 80px;
+        height: 80px;
+      }
+
+      .mat-primary {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+      }
+    }
+
+    mat-nav-list {
+      font-weight: 3;
+      margin-top: 20px;
+
+      a {
+          background: none;
+          height: 80px;
+          color: #CFD8DC;
+          padding: 16px 24px;
+
+          span {
+            width: 15px;
+          }
+      }
+
+      p {
+        @extend a;
+        font-size: medium;
+        height: 20px;
+        font-weight: bold;
+      }
+
+      mat-list-item {
+        cursor: default;
+        margin: 0 5px;
+        color: white;
+        text-decoration: none;
+        
+        mat-icon {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,67 @@
+<div class="form-popup">
+
+  <button mat-icon-button class="close-button" (click)="onClose()">
+    <mat-icon>close</mat-icon>
+  </button>
+
+  <h1 mat-dialog-title>{{ editMode ? 'Edit Book' : 'New Book'}}</h1>
+
+  <mat-dialog-content [formGroup]="bookForm" (ngSubmit)="onSave()">
+
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" required>
+      <mat-error>Name is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>Price</mat-label>
+      <input type="number" matInput formControlName="price" required>
+      <mat-error>Price is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>Year</mat-label>
+      <input type="number" matInput formControlName="year" required>
+      <mat-error>Please enter a valid year</mat-error>
+    </mat-form-field>
+
+    <app-author-search
+      [fGroup]="bookForm"
+      (authorChanged)="onAuthorChanged($event)"
+      [selectedAuthor]="selectedAuthor">
+    </app-author-search>
+
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>Publisher</mat-label>
+      <input matInput formControlName="publisher" required>
+      <mat-error>Publisher is required</mat-error>
+    </mat-form-field>
+
+    <h4>Cover Image</h4>
+    <div class="cover-img">
+      <img [src]="imgSrc" alt="Cover Image" *ngIf="imgSrc != null">
+      <input formControlName="cover" id="cover" type="file" (change)="onFileChanged($event)">
+      <label for="cover"><mat-icon>backup</mat-icon>  Upload new Image</label>
+    </div>
+
+    <h4>Categories</h4>
+    <app-category-search
+      [fGroup]="bookForm"
+      (categoriesChanged)="onCategoriesChanged($event)"
+      [existedCategories]="selectedCategories">
+    </app-category-search>
+
+  </mat-dialog-content>
+
+  <mat-dialog-actions class="buttons">
+    <button mat-raised-button type="submit" class="save" (click)="onSave()">Save</button>
+    <button mat-raised-button type="button" class="clear" (click)="onClear()">Clear</button>
+  </mat-dialog-actions>
+
+</div>

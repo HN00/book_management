@@ -1,0 +1,82 @@
+@import '../../../../../assets/styles/common.scss';
+
+.form-popup {
+    width: 800px;
+
+    .close-button {
+        float: right;
+        top: -20px;
+        right: -5px;
+    }
+
+    h1 {
+        text-align: center;
+        margin-top: 20px;
+        font-weight: 1200;
+    }
+    
+    .form-field {
+        display: block;
+        max-width: 75%;
+        margin: 10px auto;
+    }
+
+    .cover-img {
+        text-align: center;
+
+        img {
+            display: block;
+            max-width: 300px;
+            max-height: 300px;
+            margin: auto;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        label {
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 6px 12px;
+            margin-top: 20px;
+            cursor: pointer;
+            display: inline-flex;
+            font-family: Roboto, "Helvetica Neue", sans-serif;
+            justify-content: center;
+            align-items: center;
+            >.mat-icon {
+                margin-right: 3px;
+            }
+        }
+    }
+
+    h4 {
+        @extend .form-field;
+        font-weight: 2;
+        margin-bottom: 20px;
+    }
+    
+    .buttons {
+        margin: 0;
+        margin-top: 0px;
+        position: absolute;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    
+        button {
+            margin: 5px;
+
+            &.save {
+                background-color: $accent;
+            }
+
+            &.clear {
+                background-color: $primary;
+                color: white;
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,27 @@
+@import '../../../../../assets/styles/common.scss';
+
+h2 {
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.buttons {
+    margin: 0;
+    margin-top: 50px;
+    position: absolute;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    button {
+        margin: 5px;
+
+        &.delete {
+            background-color: $warn;
+            color: white;
+        }
+
+        &.cancel {
+            background-color: $accent;
+        }
+    }
+}

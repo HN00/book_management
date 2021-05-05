@@ -1,0 +1,36 @@
+<mat-sidenav-container class="sidenav-container">
+
+  <mat-sidenav #drawer class="sidenav" 
+    fixedInViewport="false"
+    [attr.role]="!(isHandset$) ? 'dialog' : 'navigation'" 
+    [mode]="'side'"
+    [opened]="!(isHandset$) === false">
+
+    <mat-toolbar>
+      <img src="https://openwt.com/themes/custom/openwt2018/dist/images/svg/logo_red_and_white.svg" alt="OWT Logo">
+    </mat-toolbar>
+
+    <mat-nav-list>
+      <p mat-list-item>Book Store Management</p>
+      <a mat-list-item [routerLink]="['/books']" routerLinkActive="active">
+        <mat-icon>menu_book</mat-icon><span></span>Manage Books
+      </a>
+    </mat-nav-list>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+
+    <app-header color="primary">
+
+      <button type="button" class="menu" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+
+    </app-header>
+
+    <ng-content></ng-content>
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

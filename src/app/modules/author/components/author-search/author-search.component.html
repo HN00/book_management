@@ -1,0 +1,18 @@
+<div [formGroup]="fGroup" class="filter-wrapper">
+  <mat-form-field appearance="outline" class="form-edit">
+    <mat-label>Author</mat-label>
+    <input matInput formControlName="author" placeholder="Author" 
+      (ngModelChange)="onValueChanged($event)" 
+      [matAutocomplete]="autoAuthor" 
+      [required]="true"
+      [value]="selectedAuthor?.name">
+    <mat-autocomplete #autoAuthor="matAutocomplete" (optionSelected)="selectAuthor($event)" [displayWith]="displayFn">
+      <span *ngIf="(searchResults$ | async)?.length">
+        <mat-option *ngFor="let result of searchResults$ | async" [value]="result.name">
+          {{ result.name }}
+        </mat-option>
+      </span>
+    </mat-autocomplete>
+    
+  </mat-form-field>
+</div>

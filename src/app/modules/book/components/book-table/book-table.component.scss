@@ -1,0 +1,86 @@
+@import '../../../../../assets/styles/common.scss';
+
+.table-div {
+    max-width: 95%;
+    margin: auto;
+
+    .sort-buttons {
+        margin-left: 30px;
+
+        & h4 {
+            display: inline;
+        }
+
+        & button {
+            background-color: $primary;
+            color: white;
+            margin: 5px;
+        }
+    }
+    
+    table {
+        width: calc(100% - 60px);
+        margin: 10px 30px;
+        .mat-header-cell {
+            background-color: $primary;
+            color: white;
+
+            .sort-button {
+                border: none;
+                background: none;
+                cursor: pointer;
+                color: white;
+                width: 5px;
+                height: 5px;
+                // vertical-align: middle;
+            }
+        }
+    
+        .clickable {
+            cursor: pointer;
+            &:hover {
+                background-color: ivory;
+            }
+        }
+    
+        a:hover {
+            color: black;
+            text-transform: none;
+        }
+    }
+    .line {
+        margin: 10px 30px;
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .form {
+            width: 60%;    
+            display: flex;
+            align-items: center;
+            &-field {
+                width: 100%;
+                input {
+                    font-size: 18px;
+                }
+            }
+        }
+        
+        .search-button {
+            background-color: $secondary;
+        }
+    }
+
+    .paging {
+        float: right;
+        position: absolute;
+        right: 5%;
+        margin: 1.5rem 0px;
+    }
+
+    .new-button {
+        background-color: $accent;
+        width: 20%;
+        margin: 25px 0px 45px 50px;
+    }
+}

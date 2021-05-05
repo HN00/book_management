@@ -1,0 +1,19 @@
+div {
+    display: inline;
+
+    .category-edit {
+        display: block;
+        max-width: 75%;
+        margin: 10px auto;
+              
+        input {
+            font-size: 18px;
+        }
+    }
+
+    .form-field {
+        display: block;
+        max-width: 75%;
+        margin: 10px auto;
+    }
+}

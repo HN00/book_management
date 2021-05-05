@@ -1,0 +1,33 @@
+@import '../../../../assets/styles/common.scss';
+
+mat-toolbar {
+    background-color: $primary;
+
+    .title {
+        color: white;
+        font-size: 25px;
+    }
+    
+    .spacer {
+        flex: 1 1 auto;
+    }
+    
+    a {
+        display: inline-block;
+        cursor: pointer;
+        margin: auto 10px;
+        color: white;
+        text-decoration: none;
+        font-weight: 3;
+
+        &:hover {
+            text-decoration: underline;
+        }
+        
+        img {
+            max-width: 50px;
+            max-height: 50px;
+        }
+    }
+    
+}

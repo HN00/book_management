@@ -1,0 +1,131 @@
+.close-button {
+    float: right;
+    top: -10px;
+    right: -5px;
+    color: red;
+}
+
+.container {
+    width: 800px;
+    margin: 0 auto;
+    padding: 15px;
+    display: flex;
+}
+
+.left-column {
+    width: 55%;
+    position: relative;
+
+    & div {
+        text-align: center;
+
+        & p {
+            padding: 45% 0;
+            display: inline-block;
+        }
+    }
+}
+  
+.right-column {
+    width: 45%;
+}
+
+.left-column img {
+    width: 80%;
+}
+  
+.description {
+    border-bottom: 1px solid #E1E8EE;
+    margin-bottom: 10px;
+
+    & span {
+        font-size: 12px;
+        color: #358ED7;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+
+    & h1 {
+        font-weight: 300;
+        font-size: 30px;
+        color: #43484D;
+    }
+}
+
+p {
+    font-size: 16px;
+    font-weight: 300;
+    color: #86939E;
+    line-height: 24px;
+}
+  
+.details {
+    border-bottom: 1px solid #E1E8EE;
+    margin-bottom: 10px;
+
+    & span {
+        font-size: 14px;
+        font-weight: 400;
+        color: #86939E;
+        margin-bottom: 20px;
+        display: inline-block;
+    }
+
+    .line p {
+        display: inline;
+        margin: 20px;
+    }
+
+    .categories {
+        margin-bottom: 10px;
+    
+        & button {
+            border: 2px solid #E1E8EE;
+            border-radius: 6px;
+            padding: 13px 20px;
+            font-size: 14px;
+            color: #5E6977;
+            background-color: #fff;
+            margin-right: 5px;
+        }
+    }
+}
+  
+.price {
+    display: flex;
+    align-items: center;
+
+    & span {
+        font-size: 26px;
+        font-weight: 300;
+        color: #43474D;
+    }
+}
+  
+@media (max-width: 940px) {
+    .container {
+        flex-direction: column;
+        margin-top: 60px;
+    }
+  
+    .left-column,
+    .right-column {
+      width: 100%;
+    }
+  
+    .left-column img {
+      width: 300px;
+      right: 0;
+      top: -65px;
+      left: initial;
+    }
+}
+  
+@media (max-width: 535px) {
+    .left-column img {
+      width: 220px;
+      top: -85px;
+    }
+}
+  

@@ -1,0 +1,46 @@
+<button mat-icon-button class="close-button" (click)="onClose()">
+  <mat-icon>close</mat-icon>
+</button>
+
+<div class="container">
+
+  <div class="left-column">
+    <img [src]="imgSrc" alt="Cover Image" *ngIf="imgSrc">
+    <div *ngIf="!imgSrc">
+      <p>No Images Available</p>
+    </div>
+  </div>
+
+  <div class="right-column">
+
+    <div class="description">
+      <span>{{ book.publisher }}</span>
+      <h1>{{ book.name }}</h1>
+      <p>{{ book.description ? book.description : 'No Descriptions Available' }}</p>
+    </div>
+
+    <div>
+      <div class="details">
+        <div class="line">
+          <span>Author</span>
+          <p>{{ book.author ? book.author.name : '' }}</p>
+        </div>
+        <div class="line">
+          <span>Year </span>
+          <p>{{ book.year }}</p>
+        </div>
+
+        <span>Categories</span>
+
+        <div class="categories">
+          <button *ngFor="let category of book.categories">{{ category.name }}</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="price">
+      <span>Price: {{ book.price }}$</span>
+    </div>
+  </div>
+</div>

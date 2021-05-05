@@ -1,0 +1,30 @@
+<div [formGroup]="fGroup">
+
+  <mat-form-field appearance="outline" class="category-edit">
+
+    <mat-chip-list #chipList aria-label="Categories selection">
+      <mat-chip *ngFor="let category of selectedCategories" 
+        [selectable]="selectable" 
+        [removable]="removable"
+        (removed)="remove(category)">
+        {{ category.name }}
+        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+      </mat-chip>
+
+      <input placeholder="Add category..." #categoryInput 
+        formControlName="categories" 
+        [matAutocomplete]="autoCategory"
+        [matChipInputFor]="chipList" 
+        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+        (matChipInputTokenEnd)="add($event)">
+    </mat-chip-list>
+    <mat-autocomplete #autoCategory="matAutocomplete" (optionSelected)="selectCategory($event)">
+      <span *ngIf="(searchResults$ | async)?.length">
+        <mat-option *ngFor="let result of searchResults$ | async" [value]="result.name">
+          {{ result.name }}
+        </mat-option>
+      </span>
+    </mat-autocomplete>
+  </mat-form-field>
+
+</div>

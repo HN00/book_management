@@ -1,0 +1,19 @@
+div {
+    display: inline;
+
+    .form-field {
+        width: 40%;
+        margin: 10px 10px 0 20px;
+        height: 10px;
+          
+        input {
+            font-size: 18px;
+        }
+    }
+
+    .form-edit {
+        display: block;
+        max-width: 75%;
+        margin: 10px auto;
+    }
+}
